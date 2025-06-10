@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Emotion detected: {{ emotion }}</h2>
+        <h3>Top movie recommendations:</h3>
+        
+        <div class="movies">
+            {% for movie in recommendations %}
+                <div class="movie-card">
+                    {% if movie.image %}
+                        <img src="{{ url_for('static', filename='images/' + movie.image) }}" alt="{{ movie.title }}">
+                    {% endif %}
+                    <h4>{{ movie.title }}</h4>
+                    <p><strong>Rating:</strong> {{ movie.rating }}</p>
+                    <p>{{ movie.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <a class="back-button" href="{{ url_for('index') }}">⟵ Back</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Emotion Input</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <h2>Hello {{ username }}!</h2>
+    <p>How are you feeling today?</p>
+    <form method="post" action="{{ url_for('recommend') }}">
+        <input type="text" name="feeling" required>
+        <button type="submit">Get Recommendations</button>
+    </form>
+    <br>
+    <a href="{{ url_for('profile') }}">View Profile</a> |
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

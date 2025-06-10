@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 2rem 3rem;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  animation: fadeInScale 0.6s ease forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+textarea {
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.15);
+  transition: box-shadow 0.3s ease;
+  resize: vertical;
+  min-height: 90px;
+  outline: none;
+  background: rgba(255 255 255 / 0.85);
+  color: #222;
+}
+
+textarea:focus {
+  box-shadow: inset 0 0 8px 2px #ff6f61;
+}
+
+button {
+  padding: 0.85rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff6f61 0%, #d63a2f 100%);
+  box-shadow: 0 5px 15px rgba(255, 111, 97, 0.6);
+  color: white;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #d63a2f 0%, #ff6f61 100%);
+  box-shadow: 0 8px 20px rgba(214, 58, 47, 0.8);
+  transform: translateY(-2px);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  text-align: left;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 12px;
+  background: rgba(255 255 255 / 0.15);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  
+}
+
+ul li {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255 255 255 / 0.2);
+  transition: background 0.2s ease;
+  cursor: default;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li:hover {
+  background: rgba(255 111 97 / 0.4);
+}
+
+a {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: #ffd6d0;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 2rem;
+    max-width: 90vw;
+  }
+}
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.movie-card {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  background-color: blue;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.movie-poster {
+  max-width: 100%;  
+  height: auto;      
+  max-height: 300px; 
+  display: block;    
+  margin: 1 rem 0;    
+}

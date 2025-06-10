@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Profile</title>
+</head>
+<body>
+    <h2>Your Profile</h2>
+    <p>Last detected emotion: {{ emotion }}</p>
+    <h3>Past Recommendations</h3>
+    {% for entry in past_recommendations %}
+        <div class="recommendation-group">
+            <h4>When you felt <strong>{{ entry.emotion }}</strong>:</h4>
+            <ul>
+            {% for movie in entry.recommendations %}
+                <li class="movie-item">
+                    <div class="movie-title">{{ movie.title }}</div>
+                    <div class="movie-details">
+                        <span class="rating">★ {{ movie.rating }}</span> |
+                        <span class="genre">{{ movie.genre }}</span>
+                    </div>
+                    <p class="movie-description">{{ movie.description }}</p>
+                    {% if movie.image %}
+                    <img src="{{ url_for('static', filename='images/' + movie.image) }}" 
+                         alt="{{ movie.title }} poster" 
+                         class="movie-poster">
+                    {% endif %}
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <p class="no-history">No recommendation history found.</p>
+    {% endfor %}
+    
+    <div class="navigation-links">
+        <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-logout">Logout</a>
+    </div>
+</body>
+</html>

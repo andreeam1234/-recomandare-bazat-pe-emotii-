@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Welcome | Emotion Recommender</title>
+</head>
+<body>
+    <h1>Welcome to the Emotion-Based Movie Recommender</h1>
+    <a href="{{ url_for('login') }}"><button>Login</button></a>
+    <a href="{{ url_for('register') }}"><button>Register</button></a>
+</body>
+</html>
